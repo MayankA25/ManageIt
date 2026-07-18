@@ -10,7 +10,6 @@ export default function GoogleLogin() {
   };
 
   return (
-    <div className="flex w-full items-center justify-center">
       <Button>
         <div
           onClick={handleLogin}
@@ -29,6 +28,5 @@ export default function GoogleLogin() {
           </div>
         </div>
       </Button>
-    </div>
   );
 }

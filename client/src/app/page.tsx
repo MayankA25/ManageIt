@@ -1,5 +1,7 @@
 import { LogIn } from "lucide-react";
 import Features from "@/components/Features/Features";
+import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,7 +9,7 @@ export default function Home() {
       <div className="flex flex-col items-center gap-7 text-center">
         <h1 className="text-4xl font-bold">
           <span className="bg-linear-40 from-red-600 via-pink-500 to-pink-400 bg-clip-text text-transparent">
-            RecruitIt
+            WorkVault
           </span>{" "}
           - Manage Employees. Issue Credentials. Build Trust.
         </h1>
@@ -32,13 +34,15 @@ export default function Home() {
             their professional achievements.
           </p>
         </div>
-      </div>
 
-      <div className="my-10 flex items-center">
-        <button className="mx-auto flex cursor-pointer items-center gap-2 rounded-lg bg-white p-2 px-4 font-bold text-black transition-all duration-200 hover:bg-neutral-700 hover:text-white">
-          {" "}
-          <LogIn className="size-5" /> <span>Continue to RecruitIt</span>
-        </button>
+        <Link href={"/login"}>
+          <Button>
+            <div className="flex items-center gap-3 px-5">
+              <span>Conitnue to WorkVault</span>
+              <LogIn />
+            </div>
+          </Button>
+        </Link>
       </div>
 
       <hr className="m-auto my-10 w-[50%] text-white/20" />
