@@ -1,7 +1,7 @@
 import IORedis from "ioredis";
 import dotenv from "dotenv";
 
-dotenv.config({ path: "D:\\Mayank Data\\CODING\\RecruitIt\\server\\.env" })
+dotenv.config({ path: "D:\\Mayank Data\\CODING\\WorkVault\\server\\.env" })
 
 
 let redis;

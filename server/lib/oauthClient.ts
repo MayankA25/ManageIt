@@ -1,7 +1,7 @@
 import { OAuth2Client } from "google-auth-library";
 import dotenv from "dotenv";
 
-dotenv.config({ path: "D:\\Mayank Data\\CODING\\RecruitIt\\server\\.env" })
+dotenv.config({ path: "D:\\Mayank Data\\CODING\\WorkVault\\server\\.env" })
 
 export const oauthClient = new OAuth2Client({
     client_id: process.env.OAUTH_CLIENT_ID as string,

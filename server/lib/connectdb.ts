@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 import dotenv from "dotenv";
 
-dotenv.config({ path: "D:\\Mayank Data\\CODING\\RecruitIt\\server\\.env" });
+dotenv.config({ path: "D:\\Mayank Data\\CODING\\WorkVault\\server\\.env" });
 
 export const connectDB = async()=>{
 

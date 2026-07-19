@@ -5,7 +5,7 @@ import { connectDB } from "../lib/connectdb";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-dotenv.config({ path: "D:\\Mayank Data\\CODING\\RecruitIt\\server\\.env" });
+dotenv.config({ path: "D:\\Mayank Data\\CODING\\WorkVault\\server\\.env" });
 
 const app = express();
 
