@@ -1,0 +1,14 @@
+enum AuthType {
+    OAUTH
+    CREDENTIALS
+}
+
+model User {
+    id         String   @id @default(cuid())
+    name       String
+    email      String   @unique
+    profilePic String
+    oauthType  AuthType
+    password   String?
+    createdAt  DateTime @default(now())
+}

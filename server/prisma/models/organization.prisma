@@ -1,0 +1,27 @@
+enum OrgStatus {
+    PENDING
+    ACTIVE
+    SUSPENDED
+    DEACTIVATED
+}
+
+model Organization {
+    id           String    @id @default(cuid())
+    name         String
+    slug         String
+    website      String
+    logo         String
+    contactEmail String
+    contactPhone String
+    status       OrgStatus
+    trust        Trust?
+}
+
+model Trust {
+    id                    String       @id @default(cuid())
+    score                 Int
+    customDomainVerified  Boolean
+    employeeConfirmations Int
+    organizationId        String       @unique
+    organization          Organization @relation(fields: [organizationId], references: [id])
+}
