@@ -1,7 +1,9 @@
-
-
-model Region{
-    id String @id @default(cuid())
-    organizationId String @unique
-    organization Organization @relation(fields: [organizationId], references: [id])
+model Region {
+    id             String       @id @default(cuid())
+    regionHr       String
+    regionName     String
+    regionSlug     String
+    organizationId String       @unique
+    organization   Organization @relation(fields: [organizationId], references: [id])
+    teams Team[]
 }

@@ -6,9 +6,11 @@ enum AuthType {
 model User {
     id         String   @id @default(cuid())
     name       String
-    email      String   @unique
+    email      String
     profilePic String
-    oauthType  AuthType
-    password   String?
+    type       AuthType
+    password   String
     createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+    employee Employee?
 }

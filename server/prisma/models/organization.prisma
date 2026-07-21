@@ -1,4 +1,4 @@
-enum OrgStatus {
+enum OrganizationStatus {
     PENDING
     ACTIVE
     SUSPENDED
@@ -6,22 +6,23 @@ enum OrgStatus {
 }
 
 model Organization {
-    id           String    @id @default(cuid())
+    id           String             @id @default(cuid())
     name         String
     slug         String
     website      String
     logo         String
     contactEmail String
     contactPhone String
-    status       OrgStatus
+    status       OrganizationStatus
     trust        Trust?
+    regions      Region[]
 }
 
 model Trust {
     id                    String       @id @default(cuid())
     score                 Int
-    customDomainVerified  Boolean
-    employeeConfirmations Int
+    customDomainVerifed   Boolean
+    employeeVerifications Int
     organizationId        String       @unique
     organization          Organization @relation(fields: [organizationId], references: [id])
 }
