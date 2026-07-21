@@ -1,0 +1,7 @@
+model Session {
+    id            String   @id @default(cuid())
+    userId        String   @unique
+    user          User     @relation(fields: [userId], references: [id])
+    lastActivated DateTime @default(now())
+    expiresAt     DateTime
+}

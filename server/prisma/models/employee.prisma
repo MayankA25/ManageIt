@@ -1,17 +1,20 @@
 enum EmployeeStatus {
-  PENDING
-  ACTIVE
-  PROBATION
-  NOTICE_PERIOD
-  SUSPENDED
-  RESIGNED
-  TERMINATED
+    PENDING
+    ACTIVE
+    PROBATION
+    NOTICE_PERIOD
+    SUSPENDED
+    RESIGNED
+    TERMINATED
 }
+
 model Employee {
-    id     String @id @default(cuid())
-    userId String @unique
-    user User @relation(fields: [userId],  references: [id])
-    teamId String @unique
-    team Team @relation(fields: [teamId], references: [id])
-    role EmployeeStatus
+    id        String         @id @default(cuid())
+    userId    String         @unique
+    user      User           @relation(fields: [userId], references: [id])
+    teamId    String         @unique
+    team      Team           @relation(fields: [teamId], references: [id])
+    role      EmployeeStatus
+    createdAt DateTime       @default(now())
+    updatedAt DateTime       @updatedAt
 }

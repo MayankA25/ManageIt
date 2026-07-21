@@ -25,4 +25,6 @@ model Trust {
     employeeVerifications Int
     organizationId        String       @unique
     organization          Organization @relation(fields: [organizationId], references: [id])
+    createdAt             DateTime     @default(now())
+    updatedAt             DateTime     @updatedAt
 }

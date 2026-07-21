@@ -4,13 +4,14 @@ enum AuthType {
 }
 
 model User {
-    id         String   @id @default(cuid())
+    id         String    @id @default(cuid())
     name       String
     email      String
     profilePic String
     type       AuthType
     password   String
-    createdAt  DateTime @default(now())
-    updatedAt  DateTime @updatedAt
-    employee Employee?
+    employee   Employee?
+    sessions   Session[]
+    createdAt  DateTime  @default(now())
+    updatedAt  DateTime  @updatedAt
 }

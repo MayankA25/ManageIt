@@ -19,7 +19,7 @@ export const googleLogin = async (req: Request, res: Response) => {
   res.redirect(oauthUrl);
 };
 
-export const callback = async (req: Request, res: Response) => {
+export const callback2 = async (req: Request, res: Response) => {
   console.log("Params: ", req.query);
 
   try {
@@ -81,6 +81,18 @@ export const callback = async (req: Request, res: Response) => {
       .json({ msg: "Internal Server Error", success: false });
   }
 };
+
+export const callback = async(req: Request, res: Response)=>{
+  const params = req.params;
+
+  try{
+    const code = params.code as string
+  }catch(e){
+    console.log(e);
+
+    return res.status(500).json({ msg: "Internal Server Error", success: false })
+  }
+}
 
 export const check = async (req: Request, res: Response) => {
   // return res.status(200).redirect("http://localhost:3000/")

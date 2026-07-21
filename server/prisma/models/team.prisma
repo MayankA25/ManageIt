@@ -1,7 +1,9 @@
-model Team{
-    id String @id @default(cuid())
-    teamName String 
-    regionId String @unique
-    region Region @relation(fields: [regionId], references: [id])
+model Team {
+    id        String     @id @default(cuid())
+    teamName  String
+    regionId  String     @unique
+    region    Region     @relation(fields: [regionId], references: [id])
     employees Employee[]
-}   
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
+}
